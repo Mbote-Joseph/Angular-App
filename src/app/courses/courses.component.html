@@ -1,0 +1,38 @@
+<h2>Courses In Progress</h2>
+<div
+  *ngFor="let course of courses"
+  [class.selected]="course === selectedCourse"
+  (click)="onSelect(course)"
+  id="course"
+>
+  <!-- <h2>{{ course.name | uppercase }}</h2> -->
+  <div>
+    <span id="id">{{ course.id }}</span
+    ><span id="name"> {{ course.name }}</span>
+  </div>
+
+  <!-- <br />
+    <div>
+      <label
+        >Name :
+        <input [(ngModel)]="course.name" placeholder="Course name" />
+      </label>
+    </div> -->
+</div>
+
+<app-courses-details [course]="selectedCourse"></app-courses-details>
+
+<!-- <div *ngIf="selectedCourse">
+  <h2>{{ selectedCourse.name | uppercase }}</h2>
+  <div><span>ID: </span>{{ selectedCourse.id }}</div>
+  <div>
+    <label
+      >Name:
+      <input
+        type="text"
+        [(ngModel)]="selectedCourse.name"
+        placeholder="Course name"
+      />
+    </label>
+  </div>
+</div> -->
